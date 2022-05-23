@@ -6,6 +6,7 @@ export const paintCards = () => {
 };
 
 export const findElement = () => {
+  /*
   const allLis = document.querySelectorAll('.item');
   let firstLi = document.querySelector('ul > li:first-child');
   for (let i = 0; i < allLis.length; i++) {
@@ -14,6 +15,16 @@ export const findElement = () => {
       nextLi.style.backgroundColor = 'blue';
     } else {
       firstLi = nextLi;
+    }
+  }
+  */
+  let checkedLi = document.querySelector('ul > li:first-child');
+  while (checkedLi) {
+    if (checkedLi.matches('.item.likedItem')) {
+      checkedLi.style.backgroundColor = 'blue';
+      break;
+    } else {
+      checkedLi = checkedLi.nextElementSibling;
     }
   }
 };
